@@ -457,12 +457,20 @@ class MainWindow(QMainWindow):
         finally:
             pass
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
     mainWindow.show()
-    # mainWindow.boardWidget.setPieceAt(chess.D4,chess.Piece(chess.PAWN,chess.WHITE))    
+    # mainWindow.boardWidget.setPieceAt(chess.D4,chess.Piece(chess.PAWN,chess.WHITE))
     # mainWindow.boardWidget.moveMade.connect(mainWindow.sayHi)
-    mainWindow.boardWidget.cellWidgetClickedSig.connect(mainWindow.on_click_rel)
+    mainWindow.boardWidget.cellWidgetClickedSig.connect(
+        mainWindow.on_click_rel)
 
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
